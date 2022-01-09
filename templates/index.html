@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Frases | api</title>
+<style>
+p{
+  width: 600px;
+  align-items: center;
+  margin-left: 600px;
+} 
+hr{
+  background-color: #eee;
+    border: 0 none;
+    color: #eee;
+    height: 1px;
+    width: 700px;
+}
+h1{
+  margin-left: 600px;  
+}
+h2{
+  margin-left: 600px;  
+}
+ul li{
+margin-left: 600px;
+}
+button{
+  margin-left: 600px;  
+  background-color: rgb(61, 224, 61);
+  width: 100px;
+  height: 40px;
+}
+
+</style>
+<script>
+function exibi_frase() { 
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("GET", 'http://localhost:5000/frases_motivacionais', false);
+  xhttp.send();
+  var resp_req = xhttp.responseText;
+  resposta_api = JSON.parse(resp_req)  
+  alert(resposta_api); 
+}
+</script>
+</head>
+
+<body>
+
+      <h1 style="color: rgb(0, 0, 0)">Documentação.</h1>
+          <hr>
+                <p>Esse é um pequeno projeto de API REST, na qual retorna frases, esse projeto foi todo construido usando python, onde consiste em um webserver construido em Flask na qual realiza a leitura de um arquivo JSON, e através de um recurso nativo do python o random, sorteia uma frase aleatoria para retornar via JSON.<br>
+                Os tipos de frases disponiveis:<br>
+                    <ul>
+                      <li><a target="_blank" href="/frases_motivacionais" >Frases motivacionais</a>.</li>
+                    </ul>
+                </p>
+
+      <h2 style="color: rgb(0, 0, 0)">Como funciona ?</h2>
+         <hr>
+              <p>O funcionamento da API é simples, basta realizar um request do tipo GET para a API por meio da rota desejada, após isso você vai receber a frase no formato JSON.<br>
+              A cada novo request enviado para API ela vai sempre retonar uma frase diferente, essa API pde ser implementada em diversos tipos de sistemas para cobrir espaços vazios ou em telas de loading.
+              </p>
+      <h2 style="color: rgb(0, 0, 0)">API em funcionamento.</h2>
+      <p>Clique no botão para realizar um teste.</p>
+      <button onclick="exibi_frase()">Testar API</button>
+     
+
+</body>
+
+</html>
