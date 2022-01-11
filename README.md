@@ -1,7 +1,6 @@
 # Flask API de frases
 API usando flask na qual retorna frases motivacionais aleatorias via JSON
 
-
 #### Comandos necessarios para startar o projeto:
 **$ export FLASK_APP=main.py**
 
